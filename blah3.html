@@ -1,0 +1,153 @@
+<html>
+	<head>
+		<title>My First HTML Document</title>
+		<style type="text/css">
+			.LorenStyle {
+				color:blue;
+			}
+		</style>
+		<style type="text/css">
+			.ZachStyle {
+				color:purple;
+			}
+		</style>
+		<img src="Akatsuki_Cloud_Vector_by_GustavoDuqueEstrada.jpg">
+		<style type="text/css">
+			.Akatsuki {
+				background-image: url(Akatsuki_Cloud_Vector_by_GustavoDuqueEstrada.jpg);
+			}
+			
+			/* What I am doing below is making the whole table black, then adding white table cells td and th on top. It creates an illusion of clean black borders. */
+			.LorenTableWBorder {
+				border-spacing: 1px;
+				background-color: black;
+			}
+			
+			.LorenTableWBorder td, th {
+				/* This selects all td and th inside of anything with a LorenTableWBorder class */
+				background-color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<p style="text-align: center;">Hello <strong>WORLD!</strong></p>
+		<br/>
+		<p style="font-size: 200%; text-align: center;">This is my very first HTML page.</p>
+		<br/>
+		<p style="text-align: center; font-size: 150%; font-weight: bold;">I learned how to do this<a href="http://www.htmlgoodies.com/primers/html/article.php/3478131#"> here</a></p>
+		
+		<div style="margin:10px auto; border:1px solid black; width:400px;">
+		  <p>Now do some research on divs. Div is short for "division" and it's how you split your page up into different sections. The header is in a div, the menu is a separate div, and the main section is also a div.</p>
+		  Experiment with
+		  <ul>
+			<li>Lists</li>
+			<li>Tables</li>
+			<li>Divs</li>
+			<li>More styles - Margins, padding, alignment. You should be able to have a div expand the full page. Google search "css box diagram".</li>			
+		  </ul>
+		  <p>Also, research how to put all of your css styling into the head section of the html page (called "embedded"). So far you've donw what is called "inline" css. 
+		</div>
+		
+		<div style="float:left; min-height:300px; width:300px; border:1px solid black;">
+		left div
+		<br /><br />
+		a menu could go here.
+		</div>
+		<div style=" min-height:300px; width:300px; margin-left:350px; border:1px solid black;">
+		div next to left div
+		<br /><br />
+		This could be a little "widget" box which holds a twitter feed.
+		</div>
+		<div style="float:left; min-height:300px; width:650px; border:1px dotted grey; margin-top:20px">
+		<br /><br />
+		hi
+		</div>
+		<div style="float:left; min-height:300px; width:650px; border:1px dotted grey; margin-top:20px">
+		<br /><br />
+		<h2>Fuck Ya!</h2>
+		<p class="LorenStyle">This morning I did a pull and saw your changes, which were expected. Good! Experiment and dick around with the items in the list above. Also notice that I added some embedded styling in the header for this tag. This single tag can be styled from several different places. Inline (when the tag is started), embedded (top of page), and external (a seperate file that he page references in the head).</p>
+		<p>Also note that this is all done by memory. You don't have to be an expert, but this basic syntax and all of the tags should be pretty easy to you.</p>
+		</div>
+		<div style="float:right; min-height:300px; width:650px; border:5px dotted red; margin-top:10px;">
+			<table border= 5px class="Akatsuki" style= "width:600px; height:425px">
+				
+				<p style="text-align:center; font-size: 150%;"><b class="ZachStyle">Seattle Ninjas</b></p>
+
+				<tr>
+					<!-- Try not to use "b" tags. You can do two things instead. Either style with font-weight:bold. The other option which I used below is to use a th tag. That is short for "table heading" -->
+					<td style="color:green; font-weight:bold; font-size:125%">Player</td>
+					<td style="color:green; font-weight:bold; font-size:125%">Number</td>
+					<td style="color:green; font-weight:bold; font-size:125%">Position</td>
+				</tr>
+				<tr>
+					<td style="color:green">Pfahl</td>
+					<td style="color:green">11</td>
+					<td style="color:green">Snake/Front</td>
+				</tr>
+				<tr>
+					<td style="color:green">Anderson</td>
+					<td style="color:green">80</td>
+					<td style="color:green">Fill/Mid</td>
+				</tr>
+				<tr>
+					<td style="color:green">Hagreen</td>
+					<td style="color:green">12</td>
+					<td style="color:green">Home/Back</td>
+				</tr>
+				<tr>
+					<td style="color:green">Rodriguez</td>
+					<td style="color:green">9</td>
+					<td style="color:green">Dorito/Fill</td>
+				</tr>
+				<tr>
+					<td style="color:green">Sweeting</td>
+					<td style="color:green">10</td>
+					<td style="color:green">Dorito/Front</td>
+				</tr>
+			</table>
+			<b></b>
+			<p>That's a super thrifty thing you did there with that table!  Take that you stupid table.  Font is hard to read, but that can easily be fixed.</p>
+
+		</div>
+		
+		<div style="float:left; min-height:300px; width:650px; border:1px dotted grey; margin-top:20px">
+			Looks good! The default table borders are annoying AF. There's hack use can do to make simple borders.
+			<!--There should not be semi colon between element properties. If you look at your table above you'll see a semi colon after you specify border. -->
+			<table class="LorenTableWBorder">
+				<tr>
+					<th>Player</th>
+					<th>Number</th>
+					<th>Position</th>
+				</tr>
+				<tr>
+					<td>Pfahl</td>
+					<td>11</td>
+					<td>Snake/Front</td>
+				</tr>
+					<tr>
+					<td>Anderson</td>
+					<td>80</td>
+					<td>Fill/Mid</td>
+				</tr>
+					<tr>
+					<td>Hagreen</td>
+					<td>12</td>
+					<td>Home/Back</td>
+				</tr>
+					<tr>
+					<td>Rodriguez</td>
+					<td>9</td>
+					<td>Dorito/Fill</td>
+				</tr>
+					<tr>
+					<td>Sweeting</td>
+					<td>10</td>
+					<td>Dorito/Front</td>
+				</tr>
+			</table>
+			
+		</div>
+
+		
+	</body>
+</html>
