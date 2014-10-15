@@ -15,6 +15,18 @@
 		<style type="text/css">
 			.Akatsuki {
 				<img src="Akatsuki_Cloud_Vector_by_GustavoDuqueEstrada.jpg">
+				/* This won't work. HTML doesn't go inside of styling. Look for something like background-image: url('theimage.css') */
+			}
+			
+			/* What I am doing below is making the whole table black, then adding white table cells td and th on top. It creates an illusion of clean black borders. */
+			.LorenTableWBorder {
+				border-spacing: 1px;
+				background-color: black;
+			}
+			
+			.LorenTableWBorder td, th {
+				/* This selects all td and th inside of anything with a LorenTableWBorder class */
+				background-color: white;
 			}
 		</style>
 	</head>
@@ -59,10 +71,11 @@
 		</div>
 		<div style="float:right; min-height:300px; width:650px; border:5px dotted red; margin-top:10px;">
 			<table border= "5"; style= "width:600px; height:425px; background-image: Akatsuki">
-				<!-- Get ride of the semi colon after the class. semi colons are only used to seperate thigns in the style tag -->
+				
 				<p style="text-align:center; font-size: 150%;"><b class="ZachStyle">Seattle Ninjas</b></p>
 
 				<tr>
+					<!-- Try not to use "b" tags. You can do two things instead. Either style with font-weight:bold. The other option which I used below is to use a th tag. That is short for "table heading" -->
 					<td><b>Player</b></td>
 					<td><b>Number</b></td>
 					<td><b>Position</b></td>
@@ -97,6 +110,45 @@
 			<p>What do you think?</p>
 
 		</div>
+		
+		<div style="float:left; min-height:300px; width:650px; border:1px dotted grey; margin-top:20px">
+			Looks good! The default table borders are annoying AF. There's hack use can do to make simple borders.
+			<!--There should not be semi colon between element properties. If you look at your table above you'll see a semi colon after you specify border. -->
+			<table class="LorenTableWBorder">
+				<tr>
+					<th>Player</th>
+					<th>Number</th>
+					<th>Position</th>
+				</tr>
+				<tr>
+					<td>Pfahl</td>
+					<td>11</td>
+					<td>Snake/Front</td>
+				</tr>
+					<tr>
+					<td>Anderson</td>
+					<td>80</td>
+					<td>Fill/Mid</td>
+				</tr>
+					<tr>
+					<td>Hagreen</td>
+					<td>12</td>
+					<td>Home/Back</td>
+				</tr>
+					<tr>
+					<td>Rodriguez</td>
+					<td>9</td>
+					<td>Dorito/Fill</td>
+				</tr>
+					<tr>
+					<td>Sweeting</td>
+					<td>10</td>
+					<td>Dorito/Front</td>
+				</tr>
+			</table>
+			
+		</div>
+
 		
 	</body>
 </html>
