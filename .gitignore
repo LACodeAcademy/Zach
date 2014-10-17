@@ -1,1 +1,5 @@
-Workout/Workout/_ReSharper.Workout/
+Workout/_ReSharper.Workout/
+.suo
+.user
+bin
+obj
