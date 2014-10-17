@@ -1,9 +1,8 @@
 
-	<style>
 	#header {
-		background-color: black;
 		color: red;
 		text-align: center;
+		background-color: black;
 		padding: 10px;
 	}
 	#navigate {
@@ -26,6 +25,5 @@
 		height: 350px;
 		width: 600px;
 	}
-	</style>
 
 /* <link rel="stylesheet" type="text/css" href="BioStyle.css">
