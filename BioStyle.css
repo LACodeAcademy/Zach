@@ -1,0 +1,29 @@
+
+	#header {
+		color: red;
+		text-align: center;
+		background-color: black;
+		padding: 10px;
+	}
+	#navigate {
+		background-color: gray;
+		float: left;
+		padding: 10px;
+		line-height: 50px;
+		height: 330px;
+		width: 200px;
+	}
+	#info {
+		float: left;
+		width: 473px;
+		height: 330px;
+		padding: 10px;
+		background-color: red;
+	}
+	#pic {
+		float: left;
+		height: 350px;
+		width: 600px;
+	}
+
+/* <link rel="stylesheet" type="text/css" href="BioStyle.css">
