@@ -19,6 +19,11 @@
                 </li>
                 <li>Start by looking up master pages and implement one. This will give you an opportunity
                     to create a header and menu to share across all pages. </li>
+                    <li>Sql server connectionstring: 
+                    
+                    Data Source=LorenAcademy.db.2610820.hostedresource.com; Initial Catalog=LorenAcademy; User ID=LorenAcademy; Password='your password'; 
+                    
+                    </li>
             </ul>
         </div>
 </asp:Content>
