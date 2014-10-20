@@ -13,11 +13,11 @@
             <li>Leave this list on this page as you progress. As you complete the items in the list,
                     alter the item's li here to have a class. The class should be named something like
                     "FinishedTask" Any li with that class should have a style that "strikes" the text
-                    through to indiciate it's done. Something like <span style="text-decoration: line-through">this</span>. <span style="color:yellow">Zach, you never did this step!</span></li>
-            <li>When making a new website is usually setting up the basic outline of the site.
+                    through to indiciate it's done. Something like <span style="text-decoration: line-through">this</span>. <span style="color:yellow">Zach, you never did this step! (OOPS! Done.)</span></li>
+            <li><span style="text-decoration: line-through">When making a new website is usually setting up the basic outline of the site.</span>
             </li>
-            <li>Start by looking up master pages and implement one. This will give you an opportunity
-                    to create a header and menu to share across all pages. </li>
+            <li><span style="text-decoration: line-through">Start by looking up master pages and implement one. This will give you an opportunity
+                    to create a header and menu to share across all pages. </span></li>
             <li><b>SQL</b>
                 <ul>
                     <li>To select, alter, or insert data in our database, open sql server management studio express. It's on the desktop. Login credentials should already be filled in, if they're not, they are below.</li>
