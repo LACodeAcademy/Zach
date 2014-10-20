@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master1.master.cs" Inherits="Workout.Master1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body bgcolor="black">
+    <form id="form1" runat="server">
+    <div>
+    </div>
+    <table class="style1">
+        <tr>
+            <td bgcolor="Red" colspan="2" height="48">
+                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="Home.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="About.aspx" Text="About" Value="New Item" />
+                        <asp:MenuItem NavigateUrl="Todo.aspx" Text="To Do" />
+                        
+                    </Items>
+                </asp:Menu>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="Red" width="48">
+                &nbsp;</td>
+            <td bgcolor="Red">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="Red" colspan="2" height="48">
+                Copyright 2014 Villa de Fitness</td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
