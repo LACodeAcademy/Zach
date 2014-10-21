@@ -4,3 +4,4 @@ Workout/_ReSharper.Workout/
 bin
 obj
 Workout/Workout/_ReSharper.Workout/
+*.suo
