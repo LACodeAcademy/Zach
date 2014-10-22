@@ -3,3 +3,5 @@ suo
 .user
 bin
 obj
+Workout/Workout/_ReSharper.Workout/
+*.suo
