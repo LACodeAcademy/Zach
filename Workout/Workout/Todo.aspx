@@ -66,7 +66,16 @@
 
                 </ul>
             </li>
-
+            <li>We need to do some practice with basic c# and .net controls. To do this we'll build a basic form that adds numbers together and displays the answer.<br />
+                <h2>The Adding Tool</h2>
+                <ol>
+                    <li>Create a new web form in this solution, use the master page.</li>
+                    <li>Add two asp:textboxes, 2 labels (one to display an error if it occurs and one to display the answer), and add an asp:button.</li>
+                    <li>When you click the button, the c# logic should take the numbers from the two textboxes, add them together, and display the answer in the label.</li>
+                    <li>Don't forget to add validation (values must be present and numeric).</li>
+                    <li>Ask loren if you need hints.</li>
+                </ol>
+            </li>
         </ul>
     </div>
 </asp:Content>
