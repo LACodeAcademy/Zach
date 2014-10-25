@@ -8,17 +8,17 @@
         There are lots of .net controls. You'll learn all about them as we progress. A asp:Label is simple. It turns into a "span" html tag.
     --%>
     <style>
-.FinishedTask {
-    text-decoration: line-through;
-}
-</style>
+        .FinishedTask {
+            text-decoration: line-through;
+        }
+    </style>
     <div>
         <hr />
         <ul>
             <li class="FinishedTask">Leave this list on this page as you progress. As you complete the items in the list,
                     alter the item's li here to have a class. The class should be named something like
                     "FinishedTask" Any li with that class should have a style that "strikes" the text
-                    through to indiciate it's done. Something like <span style="text-decoration: line-through">this</span>. <span style="color:green; font-weight: bold;">Zach, fix this step by giving the "span" tags a class and set the strike through at the top of the page.</span></li>
+                    through to indiciate it's done. Something like <span style="text-decoration: line-through">this</span>. <span style="color: green; font-weight: bold;">Zach, fix this step by giving the "span" tags a class and set the strike through at the top of the page.</span></li>
             <li class="FinishedTask">When making a new website is usually setting up the basic outline of the site.
             </li>
             <li class="FinishedTask">Start by looking up master pages and implement one. This will give you an opportunity
@@ -66,7 +66,70 @@
 
                 </ul>
             </li>
+            <li>We need to do some practice with basic c# and .net controls. To do this we'll build a basic form that adds numbers together and displays the answer.<br />
+                <div style="border: 1px solid black">
+                    <h2>The Adding Tool</h2>
+                    <ol>
+                        <li>Create a new web form in this solution, use the master page.</li>
+                        <li>Add two asp:textboxes, 2 labels (one to display an error if it occurs and one to display the answer), and add an asp:button.</li>
+                        <li>When you click the button, the c# logic should take the numbers from the two textboxes, add them together, and display the answer in the label.</li>
+                        <li>Don't forget to add validation (values must be present and numeric).</li>
+                        <li>Ask loren if you need hints.</li>
+                    </ol>
+                </div>
+            </li>
+            <li>
+                <div style="border: 1px solid black">
+                    <h2>SQL Practice</h2>
+                    <ol>
+                        <li>Put a decent amount of test data in. At least 4 different workouts with at least 5 different exercises in each.</li>
+                        <li>Do a sql statement for each of the following:
+                            <ul>
+                                <li>All exercises in any single workout.</li>
+                                <li>Include the attributes on each exercise of the above query.</li>
+                                <li>Create a query to give me the count of all exercises that are in the database.</li>
+                                <li>I want to see a query which produces the name of each workout and then the second column should display the COUNT of the amount of exercises in each workout. Look up "count" and "group by".</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
 
+            </li>
+            <li>
+                <div style="border: 1px solid black">
+                    <h2>C# Workout Steps</h2>
+                    <ol>
+                        <li>First step is to create a basic report.</li>
+                        <li>Let's start by making a page that displays details on a workout and each of the exercises in the workout.</li>
+                        <li>Create a SQL statment that will display that. The WHERE clause should search on workouts.workoutid.</li>
+                        <li>On the VS side you'll need to create a new web form. In the .aspx page you'll be using a .net repeater control asp:repeater</li>
+                        <li>Research and create the repeater on the page.</li>
+                        <li>In the .cs file you'll want to create a function which does the following:
+                            <ol>
+                                <li>
+                                    Creates a string with the SQL statement you created above.
+                                </li>
+                                <li>Use a SqlCommand, provide it with the connection string from above and the sql statement.</li>
+                                <li>Use the SqlCommand to fill a DataTable. The datatable is the a .net object that holds data.</li>
+                                <li>The datatabl will then need to bind to the repeater.</li>
+                                <li>Some reference: http://www.high-flying.co.uk/c-sharp/asp-net-repeater.html. You will want to follow this, except where it says: <br />
+                                    DataTable newsDataTable = new Datatable();  that is the line where you pull data from the database. so your code will look like:<br />
+                                    DataTable newsDataTable = ZachsFunctionWhichPullsFromDb();
+                                </li>
+                                <li>then create a function that pulls that data:<br />
+                                    protected DataTable ZachsFunctionWhichPullsFromDb()<br />
+                                    {<br />
+                                        code here...<br />
+                                    }<br />
+
+                                </li>
+                            </ol>
+                        </li>
+
+                    </ol>
+                </div>
+
+            </li>
         </ul>
     </div>
 </asp:Content>
