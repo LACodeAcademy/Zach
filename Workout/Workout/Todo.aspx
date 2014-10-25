@@ -25,7 +25,7 @@
                     to create a header and menu to share across all pages. </li>
             <li><b>SQL</b>
                 <ul>
-                    <li><span style="font-weight: bold">Ok, you can calm down with the inserts. For now, we only need some test data, not an encyclopedia of rows. Afterall, we're going to create a website that has a form for inserting these. Here's a couple notes on yesterday's work that you did:</span>
+                    <li class="FinishedTask"><span style="font-weight: bold">Ok, you can calm down with the inserts. For now, we only need some test data, not an encyclopedia of rows. Afterall, we're going to create a website that has a form for inserting these. Here's a couple notes on yesterday's work that you did:</span>
                         <ul>
                             <li>Try to keep naming conventions consistent. This isn't a "law", but a best practice. Notice the first table is capitalized "Users". The next table isn't, "exercises". You did a good job with table names.</li>
                             <li>There are also naming conventions for when you get into c#. c# is caps sensitive, sql isn't.</li>
@@ -55,9 +55,9 @@
                     <li>The overall out look is:
                         <ol>
                             <li class="FinishedTask">Insert records in Users table for all people.</li>
-                            <li>Create other tables: Excersizes, Workouts</li>
-                            <li>Fill in data in those tables.</li>
-                            <li>Start making some cool sql statements for selecting data. Research "sql joins".</li>
+                            <li class="FinishedTask">Create other tables: Excersizes, Workouts</li>
+                            <li class="FinishedTask">Fill in data in those tables.</li>
+                            <li class="FinishedTask">Start making some cool sql statements for selecting data. Research "sql joins".</li>
                         </ol>
                     </li>
                     <li>Sql server connectionstring: 
