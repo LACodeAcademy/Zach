@@ -76,6 +76,7 @@
                         <li>Don't forget to add validation (values must be present and numeric).</li>
                         <li>Ask loren if you need hints.</li>
                     </ol>
+                    <h3>Everything looks good!</h3>
                 </div>
             </li>
             <li>
@@ -102,6 +103,7 @@
                         <li>First step is to create a basic report.</li>
                         <li>Let's start by making a page that displays details on a workout and each of the exercises in the workout.</li>
                         <li>Create a SQL statment that will display that. The WHERE clause should search on workouts.workoutid.</li>
+                        <li>We will actually need 2 sql statements. One that gives "workout level" data. Things like workout name, who created the workout, when it was created, etc. The second query will be "exercise level" details. It will provide each of the excercises in the workout and their associated attributes.</li>
                         <li>On the VS side you'll need to create a new web form. In the .aspx page you'll be using a .net repeater control asp:repeater</li>
                         <li>Research and create the repeater on the page.</li>
                         <li>In the .cs file you'll want to create a function which does the following:
