@@ -21,7 +21,7 @@ namespace Workout
             //else
             {
                 //get The data
-                DataTable theData = GetTheData(2);
+                DataTable theData = GetTheData(2); //There are 3 workouts... feel free to change this value in lines 24 & 26 to see them all
                 SetWorkoutDetails(theData);
                 DataTable excerciseName = GetTheExercise(2);
                 rptExercises.DataSource = excerciseName;
