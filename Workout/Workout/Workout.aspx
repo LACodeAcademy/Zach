@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Label runat="server" ID="lblTitle"></asp:Label>
     <asp:Label runat="server" ID="lblDate"></asp:Label>
-    <asp:Repeater runat="server" ID="rptExercises">
+    <asp:Repeater runat="server" ID="rptExercises" OnItemDataBound="RptExerciseDataBind">
         <HeaderTemplate>
             <table border="1" style="width: 100%">
                 <tr bgcolor="red">
@@ -24,13 +24,13 @@
         <ItemTemplate>
                 <tr bgcolor="red">
                     <td>
-                        <%# DataBinder.Eval(Container.DataItem, "exercise") %>
+                        <asp:Label runat="server"ID="lblExercises"></asp:Label> 
                     </td>
                     <td>
-                        <%# DataBinder.Eval(Container.DataItem, "regionname") %>
+                        <asp:Label runat="server"ID="lblRegionname"></asp:Label>
                     </td>
                     <td>
-                        <%# DataBinder.Eval(Container.DataItem, "musclename") %>
+                        <asp:Label runat="server"ID="lblMuscleName"></asp:Label>
                     </td>
                 </tr>
         </ItemTemplate>

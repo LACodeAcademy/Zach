@@ -79,5 +79,11 @@ namespace Workout
             lblTitle.Text = dataTable.Rows[0]["workoutname"].ToString();
             lblDate.Text = dataTable.Rows[0]["createstamp"].ToString();
         }
+       
+        protected void RptExerciseDataBind(object sender, RepeaterItemEventArgs e)
+        {
+            RepeaterItem item = e.Item;
+            Label lblExercises = (Label)item.FindControl("lblExercises");
+        }
     }
 }
