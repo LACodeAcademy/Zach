@@ -37,5 +37,16 @@ namespace Workout
             }
             return workouts;
         }
+        protected void RptWorkoutsDataBind(object sender, RepeaterItemEventArgs e)
+        {
+            RepeaterItem item = e.Item;
+            if (item.ItemType == ListItemType.AlternatingItem || item.ItemType == ListItemType.Item)
+            {
+                DataRowView row = (DataRowView) e.Item.DataItem;
+                HyperLink hlWorkouts = (HyperLink)item.FindControl("hlWorkouts");
+                hlWorkouts.NavigateUrl = "Workout.aspx?ID=" + row["workoutid"].ToString();
+                hlWorkouts.Text = row["workoutname"].ToString();
+            }
+        }
     }
 }

@@ -24,13 +24,13 @@
         <ItemTemplate>
                 <tr bgcolor="red">
                     <td>
-                        <asp:Label runat="server"ID="lblExercises"></asp:Label> 
+                        <asp:Label runat="server" ID="lblExercises"></asp:Label> 
                     </td>
                     <td>
-                        <asp:Label runat="server"ID="lblRegionname"></asp:Label>
+                        <asp:Label runat="server" ID="lblRegionname"></asp:Label>
                     </td>
                     <td>
-                        <asp:Label runat="server"ID="lblMuscleName"></asp:Label>
+                        <asp:Label runat="server" ID="lblMuscleName"></asp:Label>
                     </td>
                 </tr>
         </ItemTemplate>

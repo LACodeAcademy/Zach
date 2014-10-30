@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Label runat="server" ID="lblWorkoutName"></asp:Label>
-    <asp:Repeater runat="server" ID="rptWorkouts">
+    <asp:Repeater runat="server" ID="rptWorkouts" OnItemDataBound="RptWorkoutsDataBind">
         <HeaderTemplate>
             <table>
             </table>
@@ -14,8 +14,8 @@
             <table>
                 <tr>
                     <td>
-                        <a href="Workout.aspx?ID=<%# DataBinder.Eval(Container.DataItem, "workoutid") %>">
-                            <%# DataBinder.Eval(Container.DataItem, "workoutname") %>
+<%--                        Need to figure out how to hyperlink this new repeater method with the workout id into the query string
+--%>                            <asp:HyperLink runat="server" ID="hlWorkouts"></asp:HyperLink>
                         </a>
                     </td>
                 </tr>

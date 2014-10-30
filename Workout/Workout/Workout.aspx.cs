@@ -86,10 +86,19 @@ namespace Workout
             //You don't want the code to do the below logic if it's for the <HeaderTemplate> or <FooterTemplate>.
             //In the example of the web page that is why they have the if statments at the start of the function.
             RepeaterItem item = e.Item;
+            if (item.ItemType == ListItemType.AlternatingItem || item.ItemType == ListItemType.Item)
+            {
+            DataRowView row = (DataRowView) e.Item.DataItem;
+            Label lblExercises = (Label)item.FindControl("lblExercises");
+                lblExercises.Text = row["exercise"].ToString();
+            Label lblRegionName = (Label)item.FindControl("lblRegionName");
+                lblRegionName.Text = row["regionname"].ToString();
+            Label lblMuscleName = (Label)item.FindControl("lblMuscleName");
+                lblMuscleName.Text = row["musclename"].ToString();
+            }
 
             //This is good, except it will fail if you're iterating throug hthe header or footer because this control doesn't exist in the header or footer.
             //Which is why you should read the above comment.
-            Label lblExercises = (Label)item.FindControl("lblExercises");
 
 
         }
