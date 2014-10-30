@@ -7,19 +7,23 @@
     <asp:Label runat="server" ID="lblWorkoutName"></asp:Label>
     <asp:Repeater runat="server" ID="rptWorkouts">
         <HeaderTemplate>
-            <table></table>
+            <table>
+            </table>
         </HeaderTemplate>
         <ItemTemplate>
             <table>
                 <tr>
                     <td>
-                        <%# DataBinder.Eval(Container.DataItem, "workoutname") %>
+                        <a href="Workout.aspx?ID=<%# DataBinder.Eval(Container.DataItem, "workoutid") %>">
+                            <%# DataBinder.Eval(Container.DataItem, "workoutname") %>
+                        </a>
                     </td>
                 </tr>
             </table>
         </ItemTemplate>
         <FooterTemplate>
-            <table></table>
+            <table>
+            </table>
         </FooterTemplate>
     </asp:Repeater>
 </asp:Content>

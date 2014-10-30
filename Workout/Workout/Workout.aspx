@@ -9,27 +9,19 @@
     <asp:Repeater runat="server" ID="rptExercises">
         <HeaderTemplate>
             <table border="1" style="width: 100%">
-                <col width="200">
-                <col width="200">
-                <col width="200">
                 <tr bgcolor="red">
-                    <th>
+                    <th style="width: 200px">
                         Excercise
                     </th>
-                    <th>
+                    <th style="width: 200px">
                         Region
                     </th>
-                    <th>
+                    <th style="width: 200px">
                         Target Muscle
                     </th>
                 </tr>
-            </table>
         </HeaderTemplate>
         <ItemTemplate>
-            <table border="1" style="width:100%">
-                <col width="200">
-                <col width="200">
-                <col width="200">
                 <tr bgcolor="red">
                     <td>
                         <%# DataBinder.Eval(Container.DataItem, "exercise") %>
@@ -41,10 +33,9 @@
                         <%# DataBinder.Eval(Container.DataItem, "musclename") %>
                     </td>
                 </tr>
-            </table>
         </ItemTemplate>
         <FooterTemplate>
-            <table>
+            </table>
         </FooterTemplate>
     </asp:Repeater>
 </asp:Content>

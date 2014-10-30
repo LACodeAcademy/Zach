@@ -20,13 +20,13 @@
     </div>
     <table class="style1">
         <tr>
-            <td bgcolor="Red" colspan="2" height="48">
+            <td bgcolor="red" colspan="2" height="48">
                 <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="Home.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="ListWorkout.aspx" Text="Workouts"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="About.aspx" Text="About" Value="New Item" />
                         <asp:MenuItem NavigateUrl="Todo.aspx" Text="To Do" />
-                        
                     </Items>
                 </asp:Menu>
             </td>

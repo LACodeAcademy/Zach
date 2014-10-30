@@ -15,20 +15,19 @@ namespace Workout
         private string _connectionString = "Data Source=LorenAcademy.db.2610820.hostedresource.com; Initial Catalog=LorenAcademy; User ID=LorenAcademy; Password='gol13!Pass';";                           
         protected void Page_Load(object sender, EventArgs e)
         {
-            //for (int i = 1; i < 100; i++)
             {
-                DataTable theData = SetTheData(1);
+                DataTable theData = SetTheData();
                 rptWorkouts.DataSource = theData;
                 rptWorkouts.DataBind();
             }
         }
-        protected DataTable SetTheData(int workoutId)
+        protected DataTable SetTheData()
         {
             DataTable workouts = new DataTable();
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(_connectionString);
-                cmd.CommandText = "select workoutname from workouts = " + workoutId;
+                cmd.CommandText = "select workoutid, workoutname from workouts";
                 cmd.Connection.Open();
                 using (SqlDataReader sdr = cmd.ExecuteReader())
                 {

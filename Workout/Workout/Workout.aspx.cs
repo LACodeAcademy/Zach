@@ -14,16 +14,16 @@ namespace Workout
         private string _connectionString = "Data Source=LorenAcademy.db.2610820.hostedresource.com; Initial Catalog=LorenAcademy; User ID=LorenAcademy; Password='gol13!Pass';";
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Request.QueryString["ID"] == null)
-            //{
-            //    lblTitle.Text = ("Sorry, there is no information to be displayed");
-            //}
-            //else
+            if (Request.QueryString["ID"] == null)
+            {
+                lblTitle.Text = ("Sorry, there is no information to be displayed");
+            }
+            else
             {
                 //get The data
-                DataTable theData = GetTheData(2); //There are 3 workouts... feel free to change this value in lines 24 & 26 to see them all
+                DataTable theData = GetTheData(Convert.ToInt32(Request.QueryString["ID"])); //There are 3 workouts... feel free to change this value in lines 24 & 26 to see them all
                 SetWorkoutDetails(theData);
-                DataTable excerciseName = GetTheExercise(2);
+                DataTable excerciseName = GetTheExercise(Convert.ToInt32(Request.QueryString["ID"]));
                 rptExercises.DataSource = excerciseName;
                 rptExercises.DataBind();
                 //display the data Convert.ToInt32(Request.QueryString["ID"]
