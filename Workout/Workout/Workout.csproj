@@ -70,6 +70,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="WebForm1.aspx" />
+    <Content Include="Workout.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -121,6 +122,9 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Workout.aspx.cs">
+      <DependentUpon>Workout.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
