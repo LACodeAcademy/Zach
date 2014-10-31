@@ -17,6 +17,8 @@ namespace Workout
         protected void Page_Load(object sender, EventArgs e)
         {
             {
+                //this line is breaking because you are trying to convert DataTable to List<Workouts>
+                //This is happening because you aren't declaring the variable correctly. Needs to be List<workouts> theData = ....
                 DataTable theData = SetTheData();
                 rptWorkouts.DataSource = theData;
                 rptWorkouts.DataBind();
@@ -33,6 +35,9 @@ namespace Workout
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(table);
                 List<Workouts> list = new List<Workouts>();
+                
+                
+                //Below you gotta do table.Rows
                 foreach (DataRow row in table)
                 {
                     Workouts instance = new Workouts();
@@ -40,6 +45,8 @@ namespace Workout
                     list.Add(instance);
                 }
             }
+
+            //you'll want to return the list that you made above.   return list;
             return //some list<Workouts>;
         }
         protected void RptWorkoutsDataBind(object sender, RepeaterItemEventArgs e)
