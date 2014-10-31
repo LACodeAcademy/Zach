@@ -19,7 +19,9 @@ namespace Workout
             {
                 //this line is breaking because you are trying to convert DataTable to List<Workouts>
                 //This is happening because you aren't declaring the variable correctly. Needs to be List<workouts> theData = ....
-                DataTable theData = SetTheData();
+
+                //well that was stupid of me... i think i even tried that at one point, but i wasnt sure if it was right
+                List<Workouts> theData = SetTheData();
                 rptWorkouts.DataSource = theData;
                 rptWorkouts.DataBind();
             }
@@ -34,20 +36,20 @@ namespace Workout
                 cmd.Connection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(table);
-                List<Workouts> list = new List<Workouts>();
+                List<Workouts> workoutList = new List<Workouts>();
                 
                 
-                //Below you gotta do table.Rows
-                foreach (DataRow row in table)
+                //Below you gotta do table.Rows -- Done
+                foreach (DataRow row in table.Rows)
                 {
                     Workouts instance = new Workouts();
-                    instance.WorkoutId = row["WorkoutId"];
-                    list.Add(instance);
+                    instance.WorkoutId = Convert.ToInt32(row["WorkoutId"]);
+                    workoutList.Add(instance);
                 }
             }
 
-            //you'll want to return the list that you made above.   return list;
-            return //some list<Workouts>;
+            //trying to do this return... workoutList is what I have throughout, but it doesnt like that
+            return workoutList;
         }
         protected void RptWorkoutsDataBind(object sender, RepeaterItemEventArgs e)
         {
