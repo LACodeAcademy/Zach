@@ -88,6 +88,13 @@
     <Compile Include="Adding.aspx.designer.cs">
       <DependentUpon>Adding.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Classes\AttributeName.cs" />
+    <Compile Include="Classes\Attributes.cs" />
+    <Compile Include="Classes\Exercises.cs" />
+    <Compile Include="Classes\Muscles.cs" />
+    <Compile Include="Classes\Regions.cs" />
+    <Compile Include="Classes\WorkoutExerciseLink.cs" />
+    <Compile Include="Classes\Workouts.cs" />
     <Compile Include="ListWorkout.aspx.cs">
       <DependentUpon>ListWorkout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -142,6 +149,7 @@
   <ItemGroup>
     <Content Include="Master1.Master" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

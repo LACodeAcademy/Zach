@@ -7,5 +7,7 @@ namespace Workout.Classes
 {
     public class Regions
     {
+        public int RegionId { get; set; }
+        public string RegionName { get; set; }
     }
 }

@@ -7,5 +7,9 @@ namespace Workout.Classes
 {
     public class WorkoutExerciseLink
     {
+        public int WorkoutExerciseLinkId { get; set; }
+        public int WorkoutId { get; set; }
+        public int ExerciseId { get; set; }
+        public DateTime CreateStamp { get; set; }
     }
 }

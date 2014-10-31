@@ -7,5 +7,7 @@ namespace Workout.Classes
 {
     public class Muscles
     {
+        public int MuscleId { get; set; }
+        public string MuscleName { get; set; }
     }
 }

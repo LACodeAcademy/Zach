@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Workout.Classes;
 
 
 namespace Workout
@@ -21,21 +22,25 @@ namespace Workout
                 rptWorkouts.DataBind();
             }
         }
-        protected DataTable SetTheData()
+        protected List<Workouts> SetTheData()
         {
-            DataTable workouts = new DataTable();
+            DataTable table = new DataTable("table");
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(_connectionString);
                 cmd.CommandText = "select workoutid, workoutname from workouts";
                 cmd.Connection.Open();
-                using (SqlDataReader sdr = cmd.ExecuteReader())
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(table);
+                List<Workouts> list = new List<Workouts>();
+                foreach (DataRow row in table)
                 {
-                    workouts.Load(sdr);
+                    Workouts instance = new Workouts();
+                    instance.WorkoutId = row["WorkoutId"];
+                    list.Add(instance);
                 }
-                cmd.Connection.Close();
             }
-            return workouts;
+            return //some list<Workouts>;
         }
         protected void RptWorkoutsDataBind(object sender, RepeaterItemEventArgs e)
         {
