@@ -25,6 +25,8 @@
                     to create a header and menu to share across all pages. </li>
             <li><b>SQL</b>
                 <ul>
+<<<<<<< HEAD
+=======
                     <li class="FinishedTask"><span style="font-weight: bold">Ok, you can calm down with the inserts. For now, we only need some test data, not an encyclopedia of rows. Afterall, we're going to create a website that has a form for inserting these. Here's a couple notes on yesterday's work that you did:</span>
                         <ul>
                             <li>Try to keep naming conventions consistent. This isn't a "law", but a best practice. Notice the first table is capitalized "Users". The next table isn't, "exercises". You did a good job with table names.</li>
@@ -48,6 +50,7 @@
                             </li>
                         </ul>
                     </li>
+>>>>>>> feature/AddWorkoutPageZP
                     <li class="FinishedTask">To select, alter, or insert data in our database, open sql server management studio express. It's on the desktop. Login credentials should already be filled in, if they're not, they are below.</li>
                     <li class="FinishedTask">In the left pane navigate to a database called "LorenAcademy". A database is comprised of 1 or more "tables". If you expand the database node you will see a node for tables. Currently there is 1 table called "Users". A table is comprised of "records". I've inserted 1 already.</li>
                     <li class="FinishedTask">At the top of Sql manager there is a button for "New Query". Click that you the main pane will fill with a text area. Write this text then click "Execute Query": select * from users</li>

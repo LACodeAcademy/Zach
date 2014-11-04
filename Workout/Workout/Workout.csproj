@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Adding.aspx" />
+    <Content Include="ListWorkout.aspx" />
     <Content Include="redo.aspx" />
     <Content Include="Todo.aspx" />
     <Content Include="Home.aspx" />
@@ -70,6 +71,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="WebForm1.aspx" />
+    <Content Include="WorkoutPage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -85,6 +87,21 @@
     </Compile>
     <Compile Include="Adding.aspx.designer.cs">
       <DependentUpon>Adding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\AttributeName.cs" />
+    <Compile Include="Classes\Attributes.cs" />
+    <Compile Include="Classes\Exercise.cs" />
+    <Compile Include="Classes\Muscle.cs" />
+    <Compile Include="Classes\Region.cs" />
+    <Compile Include="Classes\WorkoutExerciseLink.cs" />
+    <Compile Include="Classes\Workout.cs" />
+    <Compile Include="DataAccess\DataFunctions.cs" />
+    <Compile Include="ListWorkout.aspx.cs">
+      <DependentUpon>ListWorkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListWorkout.aspx.designer.cs">
+      <DependentUpon>ListWorkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="redo.aspx.cs">
       <DependentUpon>redo.aspx</DependentUpon>
@@ -122,10 +139,18 @@
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WorkoutPage.aspx.cs">
+      <DependentUpon>WorkoutPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WorkoutPage.aspx.designer.cs">
+      <DependentUpon>WorkoutPage.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master1.Master" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,7 +1,6 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master1.master.cs" Inherits="Workout.Master1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master1.master.cs" Inherits="WorkoutSite.Master1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
@@ -12,39 +11,68 @@
         {
             width: 100%;
         }
+        .style2
+        {
+            height: 150px;
+            padding: 15px;
+        }
+        .header
+        {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+        .nav
+        {
+            line-height: 30px;
+            background-color: #eeeeee;
+            height: 300px;
+            width: 100px;
+            float: left;
+            padding: 5px;
+        }
+        .section
+        {
+            width: 350px;
+            float: left;
+            padding: 10px;
+        }
+        .footer
+        {
+            background-color: black;
+            color: white;
+            clear: both;
+            text-align: center;
+            padding: 5px;
+        }
     </style>
 </head>
-<body bgcolor="black">
+<body bgcolor="white">
     <form id="form1" runat="server">
-    <div>
-    </div>
-    <table class="style1">
-        <tr>
-            <td bgcolor="Red" colspan="2" height="48">
-                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
-                    <Items>
-                        <asp:MenuItem NavigateUrl="Home.aspx" Text="Home" Value="Home"></asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="About.aspx" Text="About" Value="New Item" />
-                        <asp:MenuItem NavigateUrl="Todo.aspx" Text="To Do" />
-                        
-                    </Items>
-                </asp:Menu>
-            </td>
-        </tr>
-        <tr>
-            <td bgcolor="Red" width="48">
-                &nbsp;</td>
-            <td bgcolor="Red">
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
+    <div class="header">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
         </asp:ContentPlaceHolder>
-            </td>
-        </tr>
-        <tr>
-            <td bgcolor="Red" colspan="2" height="48">
-                Copyright 2014 Villa de Fitness</td>
-        </tr>
-    </table>
+    </div>
+    <div class="nav">
+        <asp:Menu ID="Menu1" runat="server" Orientation="Vertical">
+            <Items>
+                <asp:MenuItem NavigateUrl="Home.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="ListWorkout.aspx" Text="Workout Page"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="About.aspx" Text="About" Value="New Item" />
+                <asp:MenuItem NavigateUrl="Todo.aspx" Text="To Do" />
+            </Items>
+        </asp:Menu>
+    </div>
+    <div class="section">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="footer">
+        <p>
+            Copyright 2014 Villa de Fitness
+        </p>
+    </div>
     </form>
 </body>
 </html>

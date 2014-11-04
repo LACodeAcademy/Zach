@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Workout
+namespace WorkoutSite
 {
     public partial class Todo : System.Web.UI.Page
     {
@@ -19,7 +19,7 @@ namespace Workout
             //It's important to note that if you make a change here then press "save" and then refresh the browser you won't see the changes.
             //there's another step you need to take. You need to "build" the solution. This takes all the .cs files in the whole "solution" and "builds" them.
             //building means the code is compiled into a file that only a computer can read. All of these compiled files are put into a bin folder as .dll files.
-            //go to the Documents folder/Zach/Workout/bin and you'll see the files in there if you've built at least once. 
+            //go to the Documents folder/Zach/WorkoutPage/bin and you'll see the files in there if you've built at least once. 
             //These .dll files are the "brains" of your code. You'll also see a pdb file which you'll learn about later.
 
             //If you make a change to the .aspx file (not .cs file) then you don't need to recompile to see changes.
