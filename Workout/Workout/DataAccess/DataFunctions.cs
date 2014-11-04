@@ -77,6 +77,17 @@ namespace WorkoutSite.DataAccess
             }
             return exerciseList;
         }
+        public static void InsertWorkout(string workoutName)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.Connection = new SqlConnection(_connectionString);
+                cmd.CommandText = "insert into Workouts (WorkoutName) values ('" + workoutName + "')";
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+        }
 
     }
 }

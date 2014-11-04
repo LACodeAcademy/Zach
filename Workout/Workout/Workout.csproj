@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AddEditWorkout.aspx" />
     <Content Include="Adding.aspx" />
     <Content Include="ListWorkout.aspx" />
     <Content Include="redo.aspx" />
@@ -80,6 +81,13 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditWorkout.aspx.cs">
+      <DependentUpon>AddEditWorkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddEditWorkout.aspx.designer.cs">
+      <DependentUpon>AddEditWorkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Adding.aspx.cs">
       <DependentUpon>Adding.aspx</DependentUpon>
