@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Workout.Classes
+namespace WorkoutSite.Classes
 {
-    public class Regions
+    public class Region
     {
         public int RegionId { get; set; }
         public string RegionName { get; set; }

@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Workout
+namespace WorkoutSite
 {
     public partial class Adding : System.Web.UI.Page
     {

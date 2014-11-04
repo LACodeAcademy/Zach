@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Todo.aspx.cs" Inherits="Workout.Todo" MasterPageFile="Master1.Master" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Todo.aspx.cs" Inherits="WorkoutSite.Todo" MasterPageFile="Master1.Master" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -29,7 +29,7 @@
                         <ul>
                             <li>Try to keep naming conventions consistent. This isn't a "law", but a best practice. Notice the first table is capitalized "Users". The next table isn't, "exercises". You did a good job with table names.</li>
                             <li>There are also naming conventions for when you get into c#. c# is caps sensitive, sql isn't.</li>
-                            <li>This one is important: Whenever you find yourself typing the same text more than once, it probably means you need another table. An example is the muscle regions. What happens if we decided we want to change "Shoulders" to something else like "Upper Arms" or something weird, we'd need to update ALL records. The solution to to create another table called "MuscleRegions". That table would hold each muscle region and a unique id. Then back in the exercize table the column would be "MuscleRegionId". The Id would reference the unique Id from the new MuscleRegion table. This theory is called "Normalization". I am pretty sure you SQL book has some more good information on it.</li>
+                            <li>This one is important: Whenever you find yourself typing the same text more than once, it probably means you need another table. An example is the muscle regions. What happens if we decided we want to change "Shoulders" to something else like "Upper Arms" or something weird, we'd need to update ALL records. The solution to to create another table called "MuscleRegion". That table would hold each muscle region and a unique id. Then back in the exercize table the column would be "MuscleRegionId". The Id would reference the unique Id from the new MuscleRegion table. This theory is called "Normalization". I am pretty sure you SQL book has some more good information on it.</li>
                             <li>The same goes for the TargetMuscle column. This could likely reference the same table mentioned in the step above. The final results of the exercises table would look like:<br />
                                 <table border="1">
                                     <tr>
@@ -55,7 +55,7 @@
                     <li>The overall out look is:
                         <ol>
                             <li class="FinishedTask">Insert records in Users table for all people.</li>
-                            <li class="FinishedTask">Create other tables: Excersizes, Workouts</li>
+                            <li class="FinishedTask">Create other tables: Excersizes, WorkoutPage</li>
                             <li class="FinishedTask">Fill in data in those tables.</li>
                             <li class="FinishedTask">Start making some cool sql statements for selecting data. Research "sql joins".</li>
                         </ol>
@@ -98,7 +98,7 @@
             </li>
             <li>
                 <div style="border: 1px solid black">
-                    <h2>C# Workout Steps</h2>
+                    <h2>C# WorkoutPage Steps</h2>
                     <ol>
                         <li>First step is to create a basic report.</li>
                         <li>Let's start by making a page that displays details on a workout and each of the exercises in the workout.</li>

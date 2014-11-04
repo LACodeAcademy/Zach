@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Workout {
+namespace WorkoutSite {
     
     
-    public partial class Workout {
+    public partial class WorkoutPage {
         
         /// <summary>
         /// lblTitle control.

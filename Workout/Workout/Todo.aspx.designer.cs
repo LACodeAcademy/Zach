@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Workout {
+namespace WorkoutSite {
     
     
     public partial class Todo {

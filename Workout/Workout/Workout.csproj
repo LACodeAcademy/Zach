@@ -71,7 +71,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="WebForm1.aspx" />
-    <Content Include="Workout.aspx" />
+    <Content Include="WorkoutPage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -90,11 +90,12 @@
     </Compile>
     <Compile Include="Classes\AttributeName.cs" />
     <Compile Include="Classes\Attributes.cs" />
-    <Compile Include="Classes\Exercises.cs" />
-    <Compile Include="Classes\Muscles.cs" />
-    <Compile Include="Classes\Regions.cs" />
+    <Compile Include="Classes\Exercise.cs" />
+    <Compile Include="Classes\Muscle.cs" />
+    <Compile Include="Classes\Region.cs" />
     <Compile Include="Classes\WorkoutExerciseLink.cs" />
-    <Compile Include="Classes\Workouts.cs" />
+    <Compile Include="Classes\Workout.cs" />
+    <Compile Include="DataAccess\DataFunctions.cs" />
     <Compile Include="ListWorkout.aspx.cs">
       <DependentUpon>ListWorkout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -138,12 +139,12 @@
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Workout.aspx.cs">
-      <DependentUpon>Workout.aspx</DependentUpon>
+    <Compile Include="WorkoutPage.aspx.cs">
+      <DependentUpon>WorkoutPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Workout.aspx.designer.cs">
-      <DependentUpon>Workout.aspx</DependentUpon>
+    <Compile Include="WorkoutPage.aspx.designer.cs">
+      <DependentUpon>WorkoutPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

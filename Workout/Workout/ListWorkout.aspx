@@ -1,7 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master1.Master" AutoEventWireup="true"
-    CodeBehind="ListWorkout.aspx.cs" Inherits="Workout.ListWorkout" %>
+    CodeBehind="ListWorkout.aspx.cs" Inherits="WorkoutSite.ListWorkout" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <h1 style="text-align: center">
+        Workouts at Villa de Fitness
+    </h1>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Label runat="server" ID="lblWorkoutName"></asp:Label>
@@ -14,9 +19,8 @@
             <table>
                 <tr>
                     <td>
-<%--                        Need to figure out how to hyperlink this new repeater method with the workout id into the query string
---%>                            <asp:HyperLink runat="server" ID="hlWorkouts"></asp:HyperLink>
-                        </a>
+                        <asp:HyperLink runat="server" ID="hlWorkouts"></asp:HyperLink>
+                        <asp:Label runat="server" ID="lblCreateStamp"></asp:Label>
                     </td>
                 </tr>
             </table>

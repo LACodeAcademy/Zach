@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Workout.Classes
+namespace WorkoutSite.Classes
 {
-    public class Workouts
+    public class Workout
     {
         public int WorkoutId { get; set; }
         public string WorkoutName { get; set; }
         public DateTime CreateStamp { get; set; }
-        public List<Workout> WorkoutList { get; set; } 
+        public List<WorkoutSite.WorkoutPage> WorkoutList { get; set; } 
 
     }
 }

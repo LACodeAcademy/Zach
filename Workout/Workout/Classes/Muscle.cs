@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Workout.Classes
+namespace WorkoutSite.Classes
 {
-    public class Muscles
+    public class Muscle
     {
         public int MuscleId { get; set; }
         public string MuscleName { get; set; }
