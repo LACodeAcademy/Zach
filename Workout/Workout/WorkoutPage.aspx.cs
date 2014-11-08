@@ -20,18 +20,13 @@ namespace WorkoutSite
                 lblTitle.Text = ("Sorry, there is no information to be displayed");
                 return;
             }
-            else
-            {
-                //get The data
-                List<Workout> workouts = DataFunctions.GetTheWorouts(Convert.ToInt32(Request.QueryString["ID"])); //There are 3 workouts... feel free to change this value in lines 24 & 26 to see them all
-                SetWorkoutDetails(workouts[0]);
-                List<Exercise> excerciseName = DataFunctions.GetTheExercises(Convert.ToInt32(Request.QueryString["ID"]));
-                rptExercises.DataSource = excerciseName;
-                rptExercises.DataBind();
-                //display the data Convert.ToInt32(Request.QueryString["ID"]
-            }
-
-
+            //get The data
+            List<Workout> workouts = DataFunctions.GetTheWorkouts(Convert.ToInt32(Request.QueryString["ID"])); //There are 3 workouts... feel free to change this value in lines 24 & 26 to see them all
+            SetWorkoutDetails(workouts[0]);
+            List<Exercise> excerciseName = DataFunctions.GetTheExercises(Convert.ToInt32(Request.QueryString["ID"]));
+            rptExercises.DataSource = excerciseName;
+            rptExercises.DataBind();
+            //display the data Convert.ToInt32(Request.QueryString["ID"]
         }
 
         protected void SetWorkoutDetails(Classes.Workout theWorkout)
@@ -59,8 +54,18 @@ namespace WorkoutSite
 
             //This is good, except it will fail if you're iterating throug hthe header or footer because this control doesn't exist in the header or footer.
             //Which is why you should read the above comment.
-
-
+        }
+        protected void BtnEditWorkoutClick(object sennder, EventArgs e)
+        {
+            btnEditWorkout.Visible = false;
+            lbExercises.Visible = true;
+            lbExercises.DataSource = DataFunctions.GetAllTheExercises();
+            lbExercises.DataTextField = "ExerciseName";
+            // Ok, this is where im having an issue.  If you uncomment the below two lines of code you'll get the exception
+            //lbExercises.DataTextField = "RegionName"; 
+            //lbExercises.DataTextField = "Musclename";
+            lbExercises.DataValueField = "ExerciseId";
+            lbExercises.DataBind();
         }
     }
 }

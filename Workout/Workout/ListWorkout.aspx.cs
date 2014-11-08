@@ -21,7 +21,7 @@ namespace WorkoutSite
             //this line is breaking because you are trying to convert DataTable to List<WorkoutPage>
             //This is happening because you aren't declaring the variable correctly. Needs to be List<workouts> theData = ....
 
-            List<Classes.Workout> theData = DataFunctions.GetTheWorouts();
+            List<Classes.Workout> theData = DataFunctions.GetTheWorkouts();
             rptWorkouts.DataSource = theData;
             rptWorkouts.DataBind();
 
