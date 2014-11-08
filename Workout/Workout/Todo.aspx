@@ -23,115 +23,46 @@
             </li>
             <li class="FinishedTask">Start by looking up master pages and implement one. This will give you an opportunity
                     to create a header and menu to share across all pages. </li>
-            <li><b>SQL</b>
-                <ul>
-                    <li class="FinishedTask"><span style="font-weight: bold">Ok, you can calm down with the inserts. For now, we only need some test data, not an encyclopedia of rows. Afterall, we're going to create a website that has a form for inserting these. Here's a couple notes on yesterday's work that you did:</span>
-                        <ul>
-                            <li>Try to keep naming conventions consistent. This isn't a "law", but a best practice. Notice the first table is capitalized "Users". The next table isn't, "exercises". You did a good job with table names.</li>
-                            <li>There are also naming conventions for when you get into c#. c# is caps sensitive, sql isn't.</li>
-                            <li>This one is important: Whenever you find yourself typing the same text more than once, it probably means you need another table. An example is the muscle regions. What happens if we decided we want to change "Shoulders" to something else like "Upper Arms" or something weird, we'd need to update ALL records. The solution to to create another table called "MuscleRegion". That table would hold each muscle region and a unique id. Then back in the exercize table the column would be "MuscleRegionId". The Id would reference the unique Id from the new MuscleRegion table. This theory is called "Normalization". I am pretty sure you SQL book has some more good information on it.</li>
-                            <li>The same goes for the TargetMuscle column. This could likely reference the same table mentioned in the step above. The final results of the exercises table would look like:<br />
-                                <table border="1">
-                                    <tr>
-                                        <th>UserId</th>
-                                        <th>Exercize</th>
-                                        <th>TargetMuscleId</th>
-                                        <th>RegionId</th>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Arnold Press</td>
-                                        <td>4</td>
-                                        <th>6</th>
-                                    </tr>
-                                </table>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="FinishedTask">To select, alter, or insert data in our database, open sql server management studio express. It's on the desktop. Login credentials should already be filled in, if they're not, they are below.</li>
-                    <li class="FinishedTask">In the left pane navigate to a database called "LorenAcademy". A database is comprised of 1 or more "tables". If you expand the database node you will see a node for tables. Currently there is 1 table called "Users". A table is comprised of "records". I've inserted 1 already.</li>
-                    <li class="FinishedTask">At the top of Sql manager there is a button for "New Query". Click that you the main pane will fill with a text area. Write this text then click "Execute Query": select * from users</li>
-                    <li class="FinishedTask">Now the move is to do some reading on sql. Don't really worry about reading anything about creating or altering tables. Instead, you want to learn about normalized databases and select/insert/update statements.</li>
-                    <li>The overall out look is:
-                        <ol>
-                            <li class="FinishedTask">Insert records in Users table for all people.</li>
-                            <li class="FinishedTask">Create other tables: Excersizes, WorkoutPage</li>
-                            <li class="FinishedTask">Fill in data in those tables.</li>
-                            <li class="FinishedTask">Start making some cool sql statements for selecting data. Research "sql joins".</li>
-                        </ol>
-                    </li>
-                    <li>Sql server connectionstring: 
-                        Data Source=LorenAcademy.db.2610820.hostedresource.com; Initial Catalog=LorenAcademy; User ID=LorenAcademy; Password='gol13!Pass'; 
-                    </li>
-
-                </ul>
-            </li>
-            <li>We need to do some practice with basic c# and .net controls. To do this we'll build a basic form that adds numbers together and displays the answer.<br />
-                <div style="border: 1px solid black">
-                    <h2>The Adding Tool</h2>
-                    <ol class="FinishedTask">
-                        <li>Create a new web form in this solution, use the master page.</li>
-                        <li>Add two asp:textboxes, 2 labels (one to display an error if it occurs and one to display the answer), and add an asp:button.</li>
-                        <li>When you click the button, the c# logic should take the numbers from the two textboxes, add them together, and display the answer in the label.</li>
-                        <li>Don't forget to add validation (values must be present and numeric).</li>
-                        <li>Ask loren if you need hints.</li>
-                    </ol>
-                    <h3>Everything looks good!</h3>
-                </div>
-            </li>
             <li>
-                <div style="border: 1px solid black">
+                <div style="border: 1px solid black; background-color: coral">
                     <h2>SQL Practice</h2>
                     <ol>
                         <li>Put a decent amount of test data in. At least 4 different workouts with at least 5 different exercises in each.</li>
                         <li>Do a sql statement for each of the following:
                             <ul>
                                 <li>All exercises in any single workout.</li>
-                                <li>Include the attributes on each exercise of the above query.</li>
                                 <li>Create a query to give me the count of all exercises that are in the database.</li>
                                 <li>I want to see a query which produces the name of each workout and then the second column should display the COUNT of the amount of exercises in each workout. Look up "count" and "group by".</li>
+                                <li>List of all exercises which are NOT on a workout.</li>
                             </ul>
                         </li>
                     </ol>
                 </div>
-
             </li>
             <li>
-                <div style="border: 1px solid black">
-                    <h2>C# WorkoutPage Steps</h2>
-                    <ol>
-                        <li>First step is to create a basic report.</li>
-                        <li>Let's start by making a page that displays details on a workout and each of the exercises in the workout.</li>
-                        <li>Create a SQL statment that will display that. The WHERE clause should search on workouts.workoutid.</li>
-                        <li>We will actually need 2 sql statements. One that gives "workout level" data. Things like workout name, who created the workout, when it was created, etc. The second query will be "exercise level" details. It will provide each of the excercises in the workout and their associated attributes.</li>
-                        <li>On the VS side you'll need to create a new web form. In the .aspx page you'll be using a .net repeater control asp:repeater</li>
-                        <li>Research and create the repeater on the page.</li>
-                        <li>In the .cs file you'll want to create a function which does the following:
-                            <ol>
-                                <li>
-                                    Creates a string with the SQL statement you created above.
-                                </li>
-                                <li>Use a SqlCommand, provide it with the connection string from above and the sql statement.</li>
-                                <li>Use the SqlCommand to fill a DataTable. The datatable is the a .net object that holds data.</li>
-                                <li>The datatabl will then need to bind to the repeater.</li>
-                                <li>Some reference: http://www.high-flying.co.uk/c-sharp/asp-net-repeater.html. You will want to follow this, except where it says: <br />
-                                    DataTable newsDataTable = new Datatable();  that is the line where you pull data from the database. so your code will look like:<br />
-                                    DataTable newsDataTable = ZachsFunctionWhichPullsFromDb();
-                                </li>
-                                <li>then create a function that pulls that data:<br />
-                                    protected DataTable ZachsFunctionWhichPullsFromDb()<br />
-                                    {<br />
-                                        code here...<br />
-                                    }<br />
-
-                                </li>
-                            </ol>
-                        </li>
-
-                    </ol>
-                </div>
-
+                <h2>Other</h2>
+                <ul>
+                    <li>In our programming you'll encouter lists a lot. Lists of exercises, lists of workouts, lists of items on an order. They're faily easy to deal with. The format is: 
+                        <textarea>
+                            List<Type> 
+                        </textarea>
+                       Where type is what the list is a list of. So a List of Exercises would be 
+                        <textarea>
+                            List<Exercise> exercises = new List<Exercise>();
+                        </textarea>
+                        You can then cycle through the list (foreach) or manipulate  the list ( exercises.OrderBy(x => x.ExerciseName) ).  You can also "bind" that list to shit. An example would be a ListBox. The problem that we had earlier this week was that you wanted to bind the list to the listbox, but you wanted to display the name of the exercise and also the exercise region.  Because of the complexity here, we need to cycle through the exercises and add them to the ListBox 1 at a time:<br />
+                        foreach (Exercise thisExercise in ListOfExercises)<br />
+                        {<br />
+                            string textValueForListBox = thisExercise.ExerciseName + " " + thisExercise.Region.RegionName;<br />
+                            ListItem theListItem = new ListItem();<br />
+                            theListItem.Text = textValueForListBox;<br />
+                            theListItem.Value = thisExercise.ExerciseId.ToString();<br />
+                            lbExercises.Add(theListItem);<br />
+                        }<br />
+                    </li>
+                </ul>
             </li>
+
         </ul>
     </div>
 </asp:Content>

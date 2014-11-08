@@ -34,7 +34,7 @@ namespace WorkoutSite
             lblTitle.Text = theWorkout.WorkoutName;
             lblDate.Text = theWorkout.CreateStamp.ToString();
         }
-       
+
         protected void RptExerciseDataBind(object sender, RepeaterItemEventArgs e)
         {
             //You need to create an if statment here which basically makes the code below execute only if it's the code is cyclying for <ItemTemplate>
@@ -43,12 +43,12 @@ namespace WorkoutSite
             RepeaterItem item = e.Item;
             if (item.ItemType == ListItemType.AlternatingItem || item.ItemType == ListItemType.Item)
             {
-            Exercise exercise = (Exercise) e.Item.DataItem;
-            Label lblExercises = (Label)item.FindControl("lblExercises");
+                Exercise exercise = (Exercise)e.Item.DataItem;
+                Label lblExercises = (Label)item.FindControl("lblExercises");
                 lblExercises.Text = exercise.ExerciseName;
-            Label lblRegionName = (Label)item.FindControl("lblRegionName");
+                Label lblRegionName = (Label)item.FindControl("lblRegionName");
                 lblRegionName.Text = exercise.Region.RegionName;
-            Label lblMuscleName = (Label)item.FindControl("lblMuscleName");
+                Label lblMuscleName = (Label)item.FindControl("lblMuscleName");
                 lblMuscleName.Text = exercise.Muscle.MuscleName;
             }
 
@@ -59,13 +59,31 @@ namespace WorkoutSite
         {
             btnEditWorkout.Visible = false;
             lbExercises.Visible = true;
-            lbExercises.DataSource = DataFunctions.GetAllTheExercises();
-            lbExercises.DataTextField = "ExerciseName";
-            // Ok, this is where im having an issue.  If you uncomment the below two lines of code you'll get the exception
-            //lbExercises.DataTextField = "RegionName"; 
-            //lbExercises.DataTextField = "Musclename";
-            lbExercises.DataValueField = "ExerciseId";
-            lbExercises.DataBind();
+            foreach (Exercise currentExercise in DataFunctions.GetAllTheExercises())
+            {
+                string textLbExercises = currentExercise.ExerciseName + " - " + currentExercise.Region.RegionName + " - " + currentExercise.Muscle.MuscleName;
+                ListItem currentListItem = new ListItem();
+                currentListItem.Text = textLbExercises;
+                currentListItem.Value = currentExercise.ExerciseId.ToString();
+                lbExercises.Items.Add(currentListItem);
+            }
         }
+        protected void LbExerciseClick(object sender, EventArgs e)
+        {
+            btnInsertExercise.Visible = true;
+            btnInsertExercise.Text = "Add Selected Exercise To Workout";
+        }
+        protected void BtnInsertExerciseClick(object sender, EventArgs e)
+        {
+            int workoutId = (Convert.ToInt32(Request.QueryString["ID"]));
+            int exerciseId = (Convert.ToInt32(lbExercises.SelectedItem.Value));
+            DataFunctions.InsertExercise(workoutId, exerciseId);
+            List<Workout> workouts = DataFunctions.GetTheWorkouts(Convert.ToInt32(Request.QueryString["ID"])); //There are 3 workouts... feel free to change this value in lines 24 & 26 to see them all
+            SetWorkoutDetails(workouts[0]);
+            List<Exercise> excerciseName = DataFunctions.GetTheExercises(Convert.ToInt32(Request.QueryString["ID"]));
+            rptExercises.DataSource = excerciseName;
+            rptExercises.DataBind();
+        }
+
     }
 }

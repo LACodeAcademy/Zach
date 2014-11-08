@@ -130,7 +130,7 @@ namespace WorkoutSite.DataAccess
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(_connectionString);
-                cmd.CommandText = @"select Exercise, RegionName, MuscleName from exercises e
+                cmd.CommandText = @"select ExerciseId, Exercise, RegionName, MuscleName from exercises e
                 left outer join regions r
                 on e.regionid=r.regionid
                 left outer join muscles m
@@ -146,6 +146,7 @@ namespace WorkoutSite.DataAccess
             {
                 Exercise instance = new Exercise();
                 instance.ExerciseName = Convert.ToString(row["exercise"]);
+                instance.ExerciseId = Convert.ToInt32(row["exerciseid"]);
                 instance.Region = new Region();
                 instance.Region.RegionName = Convert.ToString(row["regionname"]);
                 instance.Muscle = new Muscle();
@@ -153,6 +154,25 @@ namespace WorkoutSite.DataAccess
                 exerciseList.Add(instance);
             }
             return exerciseList;
+        }
+
+        // Adds an exercise to a workout
+        public static void InsertExercise(int workoutId, int exerciseId)
+        {
+            {
+                DataTable table = new DataTable();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = new SqlConnection(_connectionString);
+                    cmd.CommandText = "insert into workoutexerciselink (workoutid, exerciseid) values (@workoutId, @exerciseId)";
+                    cmd.Parameters.AddWithValue("@workoutId", workoutId);
+                    cmd.Parameters.AddWithValue("@exerciseId", exerciseId);
+                    cmd.Connection.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(table);
+                    cmd.Connection.Close();
+                }
+            }
         }
 
     }
