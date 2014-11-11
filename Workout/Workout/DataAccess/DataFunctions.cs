@@ -130,11 +130,12 @@ namespace WorkoutSite.DataAccess
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.Connection = new SqlConnection(_connectionString);
-                cmd.CommandText = @"select ExerciseId, Exercise, RegionName, MuscleName from exercises e
+                cmd.CommandText = @"select ExerciseId, RegionName, MuscleName, Exercise from exercises e
                 left outer join regions r
                 on e.regionid=r.regionid
                 left outer join muscles m
-                on e.targetmuscleid=m.muscleid";
+                on e.targetmuscleid=m.muscleid
+				order by regionname";
                 cmd.Connection.Open();
                 using (SqlDataReader sdr = cmd.ExecuteReader())
                 {

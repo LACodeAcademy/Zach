@@ -6,7 +6,6 @@
         .forAmerica 
         {
             margin-left: 510px;
-            border: 1px solid black;
             height: 200px;
         }
     </style>
@@ -52,7 +51,7 @@
     </asp:Repeater>
     <div class="forAmerica">
         <asp:LinkButton runat="server" ID="btnEditWorkout" OnClick="BtnEditWorkoutClick" Text="Click to Edit your Workout."></asp:LinkButton>
-        <asp:ListBox runat="server" ID="lbExercises" OnSelectedIndexChanged="LbExerciseClick" Visible="False"/>
-        <asp:LinkButton runat="server" ID="btnInsertExercise" OnClick="BtnInsertExerciseClick" Visible="True" Text="Add Selected Exercise To Workout"></asp:LinkButton>
+        <asp:ListBox runat="server" ID="lbExercises" OnSelectedIndexChanged="LbExerciseClick" Visible="False" AutoPostBack="True" Height="250px"/>
+        <asp:LinkButton runat="server" ID="btnInsertExercise" OnClick="BtnInsertExerciseClick" Visible="False" Text="Add Selected Exercise To Workout"></asp:LinkButton>
     </div>
 </asp:Content>

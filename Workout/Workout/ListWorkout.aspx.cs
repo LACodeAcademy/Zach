@@ -17,18 +17,10 @@ namespace WorkoutSite
         private string _connectionString = "Data Source=LorenAcademy.db.2610820.hostedresource.com; Initial Catalog=LorenAcademy; User ID=LorenAcademy; Password='gol13!Pass';";
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            //this line is breaking because you are trying to convert DataTable to List<WorkoutPage>
-            //This is happening because you aren't declaring the variable correctly. Needs to be List<workouts> theData = ....
-
             List<Classes.Workout> theData = DataFunctions.GetTheWorkouts();
             rptWorkouts.DataSource = theData;
             rptWorkouts.DataBind();
-
         }
-
-        //trying to do this return... workoutList is what I have throughout, but it doesnt like that
-
         protected void RptWorkoutsDataBind(object sender, RepeaterItemEventArgs e)
         {
             RepeaterItem item = e.Item;

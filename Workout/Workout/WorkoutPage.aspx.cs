@@ -21,12 +21,16 @@ namespace WorkoutSite
                 return;
             }
             //get The data
-            List<Workout> workouts = DataFunctions.GetTheWorkouts(Convert.ToInt32(Request.QueryString["ID"])); //There are 3 workouts... feel free to change this value in lines 24 & 26 to see them all
-            SetWorkoutDetails(workouts[0]);
-            List<Exercise> excerciseName = DataFunctions.GetTheExercises(Convert.ToInt32(Request.QueryString["ID"]));
-            rptExercises.DataSource = excerciseName;
-            rptExercises.DataBind();
-            //display the data Convert.ToInt32(Request.QueryString["ID"]
+            if (!Page.IsPostBack == true)
+            {
+                List<Workout> workouts = DataFunctions.GetTheWorkouts(Convert.ToInt32(Request.QueryString["ID"]));
+                    //There are 3 workouts... feel free to change this value in lines 24 & 26 to see them all
+                SetWorkoutDetails(workouts[0]);
+                List<Exercise> excerciseName = DataFunctions.GetTheExercises(Convert.ToInt32(Request.QueryString["ID"]));
+                rptExercises.DataSource = excerciseName;
+                rptExercises.DataBind();
+                //display the data Convert.ToInt32(Request.QueryString["ID"]
+            }
         }
 
         protected void SetWorkoutDetails(Classes.Workout theWorkout)
@@ -61,7 +65,7 @@ namespace WorkoutSite
             lbExercises.Visible = true;
             foreach (Exercise currentExercise in DataFunctions.GetAllTheExercises())
             {
-                string textLbExercises = currentExercise.ExerciseName + " - " + currentExercise.Region.RegionName + " - " + currentExercise.Muscle.MuscleName;
+                string textLbExercises = currentExercise.Region.RegionName + " - " + currentExercise.Muscle.MuscleName + " - " + currentExercise.ExerciseName;
                 ListItem currentListItem = new ListItem();
                 currentListItem.Text = textLbExercises;
                 currentListItem.Value = currentExercise.ExerciseId.ToString();
@@ -78,7 +82,7 @@ namespace WorkoutSite
             int workoutId = (Convert.ToInt32(Request.QueryString["ID"]));
             int exerciseId = (Convert.ToInt32(lbExercises.SelectedItem.Value));
             DataFunctions.InsertExercise(workoutId, exerciseId);
-            List<Workout> workouts = DataFunctions.GetTheWorkouts(Convert.ToInt32(Request.QueryString["ID"])); //There are 3 workouts... feel free to change this value in lines 24 & 26 to see them all
+            List<Workout> workouts = DataFunctions.GetTheWorkouts(Convert.ToInt32(Request.QueryString["ID"]));
             SetWorkoutDetails(workouts[0]);
             List<Exercise> excerciseName = DataFunctions.GetTheExercises(Convert.ToInt32(Request.QueryString["ID"]));
             rptExercises.DataSource = excerciseName;
